@@ -1,3 +1,45 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "prettier", "airbnb-typescript"],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true
+  },
+  "rules": {
+    // NextJs specific fix: suppress errors for missing 'import React' in files for nextjs
+    "react/react-in-jsx-scope": "off",
+    // NextJs specific fix: allow jsx syntax in js files
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", "ts", "tsx"] }
+    ], //should add ".ts" if typescript project
+    "react/display-name": 1,
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "semi": "error",
+    "quotes": ["error", "double"],
+    "no-console": "error",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "no-plusplus": "off",
+    "comma-dangle": "off",
+    "react/require-default-props": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "operator-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-expressions": "off",
+    "no-useless-catch": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react/no-unstable-nested-components": "off",
+    "no-param-reassign": "off",
+    "no-nested-ternary": "off",
+    "no-restricted-syntax": "off",
+    "no-use-before-define": "off",
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/naming-convention": "off"
+  }
 }
